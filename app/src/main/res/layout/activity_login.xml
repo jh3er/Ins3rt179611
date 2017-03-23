@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+   <ImageView
+       android:id="@+id/ImageViewLogo"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"/>
+   <EditText
+       android:id="@+id/editTextUsername"
+       android:layout_width="250dp"
+       android:layout_height="wrap_content"
+       android:inputType="textPersonName"
+       android:hint="Username"
+       android:layout_marginTop="137dp"
+       android:layout_centerHorizontal="true"/>
+
+   <EditText
+       android:id="@+id/editTextPassword"
+       android:layout_width="250dp"
+       android:layout_height="wrap_content"
+       android:inputType="textPassword"
+       android:hint="Password"
+       android:layout_alignParentTop="true"
+       android:layout_marginTop="200dp"
+
+       android:layout_centerHorizontal="true"/>
+   <Button
+       android:id="@+id/buttonLogin"
+       android:layout_width="250dp"
+       android:layout_height="wrap_content"
+       android:text="Login"
+       android:layout_marginTop="300dp"
+       android:layout_centerHorizontal="true"/>
+
+   <Button
+       android:id="@+id/buttonRegister"
+       android:layout_width="250dp"
+       android:layout_height="wrap_content"
+       android:text="Create New Account"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="100dp"
+       android:layout_below="@id/buttonLogin"
+       android:onClick="intentRegister"/>
+</RelativeLayout>
