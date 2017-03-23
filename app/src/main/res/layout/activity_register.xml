@@ -10,5 +10,17 @@
         android:layout_height="wrap_content"
         android:text="Back to Login"
         android:layout_centerHorizontal="true"
-        android:onClick="intentBackLogin"/>
+        android:onClick="intentBackLogin"
+        android:id="@+id/button" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HAI ADAM"
+        android:width="200dp"
+        android:layout_marginTop="174dp"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
