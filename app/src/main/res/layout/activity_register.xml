@@ -4,6 +4,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:typeface="sans"
+            android:id="@+id/editTextUsernameRegis"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:id="@+id/editTextEmailRegis"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:id="@+id/editTextPasswordRegis"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:id="@+id/editTextConPasswordRegis"/>
+
+        <Button
+            android:layout_marginTop="40dp"
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_above="@+id/button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="135dp"
+            android:text="GET STARTED" />
+    </LinearLayout>
     <Button
         android:layout_marginTop="16dp"
         android:layout_width="200dp"
@@ -13,6 +52,4 @@
         android:layout_alignParentBottom="true"
         android:onClick="intentBackLogin"
         android:id="@+id/button" />
-
-
 </RelativeLayout>
