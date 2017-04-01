@@ -18,4 +18,10 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void intentGetStart(View view){
+
+        Intent intent = new Intent(this, branding.class);
+        startActivity(intent);
+    }
+
 }
