@@ -29,7 +29,7 @@
     </array>
 
     <color name="textColorPrimary">#FFFFFF</color>
-    <color name="windowBackground">#FFFFFF</color>
+    <color name="windowBackground">#3395ff</color>
     <color name="navigationBarColor">#000000</color>
-
+    <color name="buttonColor">#2278d4</color>
 </resources>
