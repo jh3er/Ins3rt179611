@@ -5,6 +5,11 @@
     android:layout_height="match_parent"
     android:background="#3395ff">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/workspace"/>
+
     <LinearLayout
         android:layout_width="275dp"
         android:layout_height="wrap_content"
@@ -15,6 +20,7 @@
             android:layout_height="wrap_content"
             android:hint="Username"
             android:typeface="sans"
+            android:layout_marginTop="230dp"
             android:id="@+id/editTextUsernameRegis"/>
         <EditText
             android:layout_width="match_parent"
