@@ -18,7 +18,10 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".branding" />
         <activity android:name=".WelcomeActivity" />
-        <activity android:name=".home"></activity>
+        <activity
+            android:name=".homeActivity"
+            android:label="Insert"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>
