@@ -51,7 +51,6 @@ public class WelcomeActivity extends AppCompatActivity {
         btnSkip = (Button) findViewById(R.id.btn_skip);
         btnNext = (Button) findViewById(R.id.btn_next);
 
-
         // layouts of all welcome sliders
         // add few more layouts if you want
         layouts = new int[]{
@@ -87,12 +86,19 @@ public class WelcomeActivity extends AppCompatActivity {
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 }
-//                else {
-//                    launchHomeScreen();
-//                }
+                else {
+                    launchHomeScreen();
+                }
             }
         });
     }
+
+    public void intentSkip(View view)
+    {
+        launchHomeScreen();
+    }
+
+
 
     private void addBottomDots(int currentPage) {
         dots = new TextView[layouts.length];
@@ -117,14 +123,12 @@ public class WelcomeActivity extends AppCompatActivity {
         return viewPager.getCurrentItem() + i;
     }
 
-//    private void launchHomeScreen() {
-//        prefManager.setFirstTimeLaunch(false);
-//        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-//        finish();
-//    }
-
+    private void launchHomeScreen() {
+        startActivity(new Intent(WelcomeActivity.this, home.class));
+        finish();
+    }
     //  viewpager change listener
-    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+    protected ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
         @Override
         public void onPageSelected(int position) {
@@ -135,6 +139,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 // last page. make button text to GOT IT
                 btnNext.setText(getString(R.string.start));
                 btnSkip.setVisibility(View.GONE);
+
             } else {
                 // still pages are left
                 btnNext.setText(getString(R.string.next));
