@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinnerPaperSize"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp" />
+        android:layout_marginTop="62dp"
+        />
 
     <Spinner
         android:id="@+id/spinnerGSM"
