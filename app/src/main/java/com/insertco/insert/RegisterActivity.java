@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -28,8 +30,39 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void intentGetStart(View view){
 
-        Intent intent = new Intent(this, WelcomeActivity.class);
-        startActivity(intent);
+        String Email = ((EditText) findViewById(R.id.editTextEmailRegis)).getText().toString();
+        String password = ((EditText) findViewById(R.id.editTextPasswordRegis)).getText().toString();
+        String confirmpass = ((EditText) findViewById(R.id.editTextConPasswordRegis)).getText().toString();
+        String user = ((EditText) findViewById(R.id.editTextUsernameRegis)).getText().toString();
+        if(validation(user , Email , password , confirmpass) == true)
+        {
+            Intent intent = new Intent(this, WelcomeActivity.class);
+            startActivity(intent);
+        }
+        else
+        {
+            Snackbar.make(view, "make sure password and confirm password are matched", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        }
+    }
+
+    private boolean validation(String username , String email , String pass , String confPass){
+        if(username.length() < 5)
+        {
+            return false;
+        }
+        else if(!email.contains("@"))
+        {
+            return false ;
+        }
+        else if(!pass.equals(confPass))
+        {
+            return false ;
+        }
+        else
+        {
+            return true ;
+        }
     }
 
     public void TransparentNotifBar(){
