@@ -2,15 +2,10 @@ package com.insertco.insert;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.StringDef;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
-
-import static android.R.attr.password;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -47,7 +47,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_add"
         app:fabSize="normal"
-        android:backgroundTint="@color/buttonColor"
+        app:backgroundTint="@color/buttonColor"
         />
 
 </android.support.design.widget.CoordinatorLayout>
