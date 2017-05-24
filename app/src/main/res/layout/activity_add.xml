@@ -9,7 +9,7 @@
         android:id="@+id/spinnerPaperSize"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="93dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -80,6 +80,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/editTextLocation"
         android:layout_marginBottom="25dp"
+        android:onClick="intentConfirm"
         android:text="Print"
         android:backgroundTint="@color/contrastButtonColor"/>
 

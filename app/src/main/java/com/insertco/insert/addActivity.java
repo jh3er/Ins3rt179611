@@ -1,5 +1,6 @@
 package com.insertco.insert;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -77,4 +78,10 @@ public class addActivity extends AppCompatActivity {
             }
         });
     }
+    public void intentConfirm(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(addActivity.this, confirmActivity.class);
+        startActivity(intent);
+    }
 }
+
