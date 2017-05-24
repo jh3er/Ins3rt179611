@@ -11,6 +11,7 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -19,9 +20,12 @@
         <activity android:name=".WelcomeActivity" />
         <activity
             android:name=".homeActivity"
-            android:label="Insert"/>
+            android:label="Insert" />
         <activity android:name=".addActivity" />
-        <activity android:name=".confirmActivity"></activity>
+        <activity android:name=".confirmActivity" />
+        <activity android:name=".PopUp"
+                  android:theme="@style/AppTheme.CustomTheme">
+        </activity>
     </application>
 
 </manifest>

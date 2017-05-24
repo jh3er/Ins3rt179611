@@ -58,6 +58,14 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
+        FloatingActionButton fabUp = (FloatingActionButton) findViewById(R.id.fabUpload);
+        fabUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(homeActivity.this, PopUp.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
