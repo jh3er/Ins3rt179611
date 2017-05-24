@@ -6,4 +6,35 @@
     <string name="title_activity_home">homeActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="paper_size">Paper Size</string>
+    <string name="paper_type">Paper Type</string>
+    <string name="paper_gsm">GSM</string>
+    <string-array name="Size_Array">
+        <item>A2</item>
+        <item>A3</item>
+        <item>A4</item>
+        <item>A5</item>
+        <item>B5</item>
+        <item>B4</item>
+        <item>Folio</item>
+        <item>Letter</item>
+    </string-array>
+    <string-array name="Type_Array">
+        <item>HVS</item>
+        <item>Art Paper</item>
+        <item>Glossy Paper</item>
+        <item>Concorde</item>
+        <item>Linen</item>
+        <item>Jasmine</item>
+    </string-array>
+    <string-array name="GSM_Array">
+        <item>70 GSM (Ftcpy)</item>
+        <item>80 GSM (Standar)</item>
+        <item>100 GSM</item>
+        <item>150 GSM</item>
+        <item>190 GSM</item>
+        <item>210 GSM</item>
+        <item>260 GSM</item>
+        <item>310 GSM</item>
+    </string-array>
 </resources>

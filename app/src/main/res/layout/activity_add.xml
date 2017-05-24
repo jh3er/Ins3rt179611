@@ -9,25 +9,78 @@
         android:id="@+id/spinnerPaperSize"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp" />
+        android:layout_marginTop="95dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:id="@+id/spinnerPaperType"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
         android:layout_below="@+id/spinnerPaperSize"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp"
-        />
+        android:layout_alignLeft="@+id/spinnerPaperSize"
+        android:layout_alignStart="@+id/spinnerPaperSize" />
 
     <Spinner
         android:id="@+id/spinnerGSM"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
         android:layout_below="@+id/spinnerPaperType"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="93dp" />
+        android:layout_alignLeft="@+id/spinnerPaperType"
+        android:layout_alignStart="@+id/spinnerPaperType" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinnerPaperSize"
+        android:layout_alignLeft="@+id/spinnerPaperSize"
+        android:layout_alignStart="@+id/spinnerPaperSize"
+        android:layout_marginBottom="23dp"
+        android:text="Paper Size" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinnerPaperType"
+        android:layout_alignLeft="@+id/spinnerPaperType"
+        android:layout_alignStart="@+id/spinnerPaperType"
+        android:layout_marginBottom="23dp"
+        android:text="Paper Type" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinnerGSM"
+        android:layout_alignLeft="@+id/spinnerGSM"
+        android:layout_alignStart="@+id/spinnerGSM"
+        android:layout_marginBottom="23dp"
+        android:text="GSM" />
+
+    <EditText
+        android:id="@+id/editTextLocation"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinnerGSM"
+        android:layout_alignStart="@+id/spinnerGSM"
+        android:layout_below="@+id/spinnerGSM"
+        android:layout_marginTop="95dp"
+        android:inputType="textPostalAddress"
+        android:hint="Location"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editTextLocation"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/editTextLocation"
+        android:layout_marginBottom="25dp"
+        android:text="Print"
+        android:backgroundTint="@color/contrastButtonColor"/>
 
 </RelativeLayout>
