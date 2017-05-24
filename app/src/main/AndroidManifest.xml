@@ -21,7 +21,8 @@
         <activity
             android:name=".homeActivity"
             android:label="Insert"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".addActivity"></activity>
     </application>
 
 </manifest>
