@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -29,39 +30,34 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void intentGetStart(View view){
-
+        String user = ((EditText) findViewById(R.id.editTextUsernameRegis)).getText().toString();
         String Email = ((EditText) findViewById(R.id.editTextEmailRegis)).getText().toString();
         String password = ((EditText) findViewById(R.id.editTextPasswordRegis)).getText().toString();
         String confirmpass = ((EditText) findViewById(R.id.editTextConPasswordRegis)).getText().toString();
-        String user = ((EditText) findViewById(R.id.editTextUsernameRegis)).getText().toString();
-        if(validation(user , Email , password , confirmpass) == true)
-        {
+
+        if(user.isEmpty()) {
+            Snackbar.make(view, "Please Fill your Username", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
+        else if(user.length()<5){
+            Snackbar.make(view, "Username Min. have 5 Characters", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
+        else if(!isValidEmail(Email)){
+            Snackbar.make(view, "Invalid Email", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
+        else if(!password.equals(confirmpass)){
+            Snackbar.make(view, "Password does not match the Confirm Password", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
+        else {
             Intent intent = new Intent(this, WelcomeActivity.class);
             startActivity(intent);
         }
-        else
-        {
-            Snackbar.make(view, "Make sure password and confirm password are matched", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        }
     }
 
-    private boolean validation(String username , String email , String pass , String confPass){
-        if(username.length() < 5)
-        {
+    public final static boolean isValidEmail(CharSequence target) {
+        if (TextUtils.isEmpty(target)) {
             return false;
-        }
-        else if(!email.contains("@"))
-        {
-            return false ;
-        }
-        else if(!pass.equals(confPass))
-        {
-            return false ;
-        }
-        else
-        {
-            return true ;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
 
