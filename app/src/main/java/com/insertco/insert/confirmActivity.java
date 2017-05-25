@@ -23,6 +23,7 @@ public class confirmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm);
+        TextView txtUser = (TextView)findViewById(R.id.textViewUser);
         TextView txtSize = (TextView)findViewById(R.id.textViewSize);
         TextView txtType = (TextView)findViewById(R.id.textViewType);
         TextView txtGsm = (TextView)findViewById(R.id.textViewGSM);
