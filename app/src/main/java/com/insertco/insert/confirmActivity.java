@@ -40,19 +40,23 @@ public class confirmActivity extends AppCompatActivity {
         txtGsm.setText(gsmSelected);
         txtLocation.setText(locationText);
     }
+
     Random rand = new Random();
     int verifCode = rand.nextInt(10000 - 1000) + 1000;
     String verif = String.valueOf(verifCode);
+
     public void intentDone(View view) {
         final Intent intent = new Intent(confirmActivity.this, homeActivity.class);
         NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(confirmActivity.this)
-                .setSmallIcon(R.drawable.print)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher))
                 .setContentTitle("Insert Verification Code")
-                .setContentText(verif);
+                .setContentText(verif)
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setPriority(Notification.PRIORITY_HIGH);
         notificationBuilder.setDefaults(
                 Notification.DEFAULT_SOUND | Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(confirmActivity.this);
+        final NotificationManagerCompat notificationManager = NotificationManagerCompat.from(confirmActivity.this);
         notificationManager.notify(1, notificationBuilder.build());
 
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(confirmActivity.this);
@@ -75,6 +79,7 @@ public class confirmActivity extends AppCompatActivity {
                 else{
                     dialog.dismiss();
                     startActivity(intent);
+                    notificationManager.cancel(1);
                     Toast.makeText(getApplicationContext(), "Your Order have been Confirmed", Toast.LENGTH_SHORT).show();
                 }
             }

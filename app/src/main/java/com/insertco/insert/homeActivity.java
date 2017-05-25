@@ -16,6 +16,10 @@ import android.view.View;
 
 public class homeActivity extends AppCompatActivity {
 
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
+    }
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
