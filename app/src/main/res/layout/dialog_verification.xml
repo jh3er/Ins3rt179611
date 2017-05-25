@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="5dp">
-
-
     <EditText
         android:id="@+id/etVerif"
         android:layout_width="match_parent"
