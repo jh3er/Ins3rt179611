@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+
+import static com.insertco.insert.R.id.editTextLocation;
 
 public class addActivity extends AppCompatActivity {
 
@@ -21,8 +24,9 @@ public class addActivity extends AppCompatActivity {
 
 
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
@@ -41,6 +45,8 @@ public class addActivity extends AppCompatActivity {
         adapterGsm = ArrayAdapter.createFromResource(this,R.array.GSM_Array,android.R.layout.simple_spinner_item);
         adapterGsm.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGsm.setAdapter(adapterGsm);
+
+
 
         spinnerSize.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -78,10 +84,21 @@ public class addActivity extends AppCompatActivity {
             }
         });
     }
+
+
     public void intentConfirm(View view) {
-        // Do something in response to button
+        EditText textlocation = (EditText) findViewById(editTextLocation);
+        String sizeSelected = spinnerSize.getSelectedItem().toString();
+        String typeSelected = spinnerType.getSelectedItem().toString();
+        String gsmSelected = spinnerGsm.getSelectedItem().toString();
+        String locationText = textlocation.getText().toString();
         Intent intent = new Intent(addActivity.this, confirmActivity.class);
+        intent.putExtra("sizeSelected",sizeSelected);
+        intent.putExtra("typeSelected",typeSelected);
+        intent.putExtra("gsmSelected",gsmSelected);
+        intent.putExtra("locationText",locationText);
         startActivity(intent);
     }
+
 }
 
