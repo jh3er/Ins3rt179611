@@ -133,11 +133,11 @@ public class homeActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    historyActivity hist = new historyActivity();
-                    return hist;
-                case 1:
                     storageActivity stor = new storageActivity();
                     return stor;
+                case 1:
+                    historyActivity hist = new historyActivity();
+                    return hist;
             }
             return null;
         }
@@ -152,9 +152,9 @@ public class homeActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "History";
-                case 1:
                     return "Storage";
+                case 1:
+                    return "History";
             }
             return null;
         }
