@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         String user = ((EditText) findViewById(R.id.editTextUsernameRegis)).getText().toString();
         String Email = ((EditText) findViewById(R.id.editTextEmailRegis)).getText().toString();
         String password = ((EditText) findViewById(R.id.editTextPasswordRegis)).getText().toString();
-        String confirmpass = ((EditText) findViewById(R.id.editTextConPasswordRegis)).getText().toString();
+        String confirmPass = ((EditText) findViewById(R.id.editTextConPasswordRegis)).getText().toString();
 
         if(user.isEmpty()) {
             Snackbar.make(view, "Please Fill your Username", Snackbar.LENGTH_LONG).setAction("Action", null).show();
@@ -44,7 +44,13 @@ public class RegisterActivity extends AppCompatActivity {
         else if(!isValidEmail(Email)){
             Snackbar.make(view, "Invalid Email", Snackbar.LENGTH_LONG).setAction("Action", null).show();
         }
-        else if(!password.equals(confirmpass)){
+        else if(password.isEmpty()){
+            Snackbar.make(view, "Please Fill your Password", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
+        else if(confirmPass.isEmpty()){
+            Snackbar.make(view, "Please Fill your Confirm Password", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
+        else if(!password.equals(confirmPass)){
             Snackbar.make(view, "Password does not match the Confirm Password", Snackbar.LENGTH_LONG).setAction("Action", null).show();
         }
         else {
