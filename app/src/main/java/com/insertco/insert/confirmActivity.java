@@ -57,7 +57,6 @@ public class confirmActivity extends AppCompatActivity {
         final EditText editTextVerif = (EditText) mView.findViewById(R.id.etVerif);
         Button buttonVerif = (Button) mView.findViewById(R.id.btnVerif);
 
-
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
         dialog.show();

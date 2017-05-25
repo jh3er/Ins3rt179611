@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         else
         {
-            Snackbar.make(view, "make sure password and confirm password are matched", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Make sure password and confirm password are matched", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
     }
