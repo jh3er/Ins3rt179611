@@ -23,9 +23,10 @@
             android:label="Insert" />
         <activity android:name=".addActivity" />
         <activity android:name=".confirmActivity" />
-        <activity android:name=".PopUp"
-                  android:theme="@style/AppTheme.CustomTheme">
-        </activity>
+        <activity
+            android:name=".PopUp"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
+        
     </application>
 
 </manifest>

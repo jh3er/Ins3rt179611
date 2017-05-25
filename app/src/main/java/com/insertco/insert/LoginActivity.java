@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.editTextPassword);
         String user = username.getText().toString();
         String pass = password.getText().toString();
-        if(user.equals("admin") && pass.equals("adminjr"))
+        if(user.equals("a") && pass.equals("a"))
         {
             Intent intent = new Intent(this, homeActivity.class);
             startActivity(intent);
