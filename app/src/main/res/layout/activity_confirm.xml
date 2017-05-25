@@ -44,7 +44,7 @@
         android:layout_below="@+id/textView4"
         android:layout_weight="1"
         android:background="@color/windowBackground"
-        android:paddingTop="15dp"
+        android:paddingTop="13dp"
         android:text="username"
         android:textAlignment="center"
         android:textColor="@color/textColorPrimary"

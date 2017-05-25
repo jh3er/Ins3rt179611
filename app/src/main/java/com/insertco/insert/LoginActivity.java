@@ -28,19 +28,12 @@ public class LoginActivity extends AppCompatActivity {
         if(user.equals("a") && pass.equals("a"))
         {
             Intent intent = new Intent(this, homeActivity.class);
+            ((globalClass) this.getApplication()).setUsernameGlobal(user);
             startActivity(intent);
         }
-
         else
         {
-            Snackbar.make(view, "Wrong Username or Password", Snackbar.LENGTH_LONG)
-                  .setAction("Action", null).show();
+            Snackbar.make(view, "Wrong Username or Password", Snackbar.LENGTH_LONG).setAction("Action", null).show();
         }
-
     }
-
-
 }
-
-    // Validation for email and password
-

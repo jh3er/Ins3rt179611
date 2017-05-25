@@ -29,10 +29,12 @@ public class confirmActivity extends AppCompatActivity {
         TextView txtGsm = (TextView)findViewById(R.id.textViewGSM);
         TextView txtLocation = (TextView)findViewById(R.id.textViewLocation);
 
+        String userSelect = ((globalClass) this.getApplication()).getUsernameGlobal();
         String sizeSelected = getIntent().getExtras().getString("sizeSelected");
         String typeSelected = getIntent().getExtras().getString("typeSelected");
         String gsmSelected = getIntent().getExtras().getString("gsmSelected");
         String locationText = getIntent().getExtras().getString("locationText");
+        txtUser.setText(userSelect);
         txtSize.setText(sizeSelected);
         txtType.setText(typeSelected);
         txtGsm.setText(gsmSelected);
