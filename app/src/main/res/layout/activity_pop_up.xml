@@ -1,32 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@color/buttonColor">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    android:background="@color/buttonColor"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose Your File"
-        android:textSize="18dp"
-        android:textColor="#ffff"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"/>
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:onClick="uploadFile">
 
-    <ImageView
-        android:id="@+id/fileBtn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/textView"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/file"
-        android:onClick="uploadFile"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/file"
+            android:onClick="uploadFile"
+            android:layout_weight="1.02"/>
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select file"
+            android:textSize="18dp"
+            android:textColor="#ffff"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:onClick="uploadPhotos">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/camera"
+            android:onClick="uploadFile"
+            android:layout_weight="1.13"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select photos"
+            android:textSize="18dp"
+            android:textColor="#ffff"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="2"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:onClick="uploadFile">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/music"
+            android:onClick="uploadMusic"
+            android:layout_weight="1.09"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select audio"
+            android:textSize="18dp"
+            android:textColor="#ffff"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="2"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:onClick="uploadVideo">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/video"
+            android:layout_weight="1.11"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select videos"
+            android:textSize="18dp"
+            android:textColor="#ffff"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="2"/>
+    </LinearLayout>
+</LinearLayout>
 
 
