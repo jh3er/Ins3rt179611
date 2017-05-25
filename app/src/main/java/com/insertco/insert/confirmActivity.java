@@ -46,6 +46,9 @@ public class confirmActivity extends AppCompatActivity {
     String verif = String.valueOf(verifCode);
 
     public void intentDone(View view) {
+
+        final String typeSelected = getIntent().getExtras().getString("typeSelected");
+
         final Intent intent = new Intent(confirmActivity.this, homeActivity.class);
         NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(confirmActivity.this)
                 .setSmallIcon(R.mipmap.ic_launcher)
@@ -77,6 +80,7 @@ public class confirmActivity extends AppCompatActivity {
                     Toast.makeText(confirmActivity.this,"Wrong Verification Code",Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    intent.putExtra("typeSelected",typeSelected);
                     dialog.dismiss();
                     startActivity(intent);
                     notificationManager.cancel(1);
