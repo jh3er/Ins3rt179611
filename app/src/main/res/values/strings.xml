@@ -10,6 +10,7 @@
     <string name="paper_type">Paper Type</string>
     <string name="paper_gsm">GSM</string>
     <string-array name="Size_Array">
+        <item>Choose Paper Size</item>
         <item>A2</item>
         <item>A3</item>
         <item>A4</item>
@@ -20,6 +21,7 @@
         <item>Letter</item>
     </string-array>
     <string-array name="Type_Array">
+        <item>Choose Paper Type</item>
         <item>HVS</item>
         <item>Art Paper</item>
         <item>Glossy Paper</item>
@@ -28,6 +30,7 @@
         <item>Jasmine</item>
     </string-array>
     <string-array name="GSM_Array">
+        <item>Choose Paper GSM</item>
         <item>70 GSM (Ftcpy)</item>
         <item>80 GSM (Standar)</item>
         <item>100 GSM</item>
