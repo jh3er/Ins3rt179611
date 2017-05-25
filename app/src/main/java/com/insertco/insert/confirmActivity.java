@@ -1,11 +1,17 @@
 package com.insertco.insert;
 
+import android.app.Notification;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Random;
 
 
 public class confirmActivity extends AppCompatActivity {
@@ -28,8 +34,21 @@ public class confirmActivity extends AppCompatActivity {
         txtGsm.setText(gsmSelected);
         txtLocation.setText(locationText);
     }
+    Random rand = new Random();
+    int verifCode = rand.nextInt(10000 - 1000) + 1000;
+    String verif = String.valueOf(verifCode);
     public void intentDone(View view) {
         Intent intent = new Intent(confirmActivity.this, homeActivity.class);
+        NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(confirmActivity.this)
+                .setSmallIcon(R.drawable.print)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher))
+                .setContentTitle("Insert Verification Code")
+                .setContentText(verif);
+        notificationBuilder.setDefaults(
+                Notification.DEFAULT_SOUND | Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(confirmActivity.this);
+        notificationManager.notify(1, notificationBuilder.build());
+
         startActivity(intent);
         Toast.makeText(getApplicationContext(), "Your Order have been Confirmed", Toast.LENGTH_SHORT).show();
     }
