@@ -8,6 +8,7 @@ public class globalClass extends Application{
     private String username;
     private ArrayList<String> historyDocumentName = new ArrayList<String>();
     private ArrayList<String> historyDate = new ArrayList<String>();
+    private ArrayList<String> storageName = new ArrayList<String>();
 
     public String getUsernameGlobal(){
         return username;
@@ -21,6 +22,9 @@ public class globalClass extends Application{
     public ArrayList<String> getHistoryDate(){
         return historyDate;
     }
+    public ArrayList<String> getStorageName(){
+        return storageName;
+    }
 
     public void addHistoryDocumentName(String x){
         this.historyDocumentName.add(x);
@@ -28,4 +32,11 @@ public class globalClass extends Application{
     public void addHistoryDate(String x){
         this.historyDate.add(x);
     }
+    public void addStorageName(String x){
+        this.storageName.add(x);
+    }
+
+
+
+
 }
