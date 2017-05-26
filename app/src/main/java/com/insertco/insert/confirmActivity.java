@@ -23,17 +23,19 @@ public class confirmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm);
+        TextView txtDoc = (TextView)findViewById(R.id.textViewDocument);
         TextView txtUser = (TextView)findViewById(R.id.textViewUser);
         TextView txtSize = (TextView)findViewById(R.id.textViewSize);
         TextView txtType = (TextView)findViewById(R.id.textViewType);
         TextView txtGsm = (TextView)findViewById(R.id.textViewGSM);
         TextView txtLocation = (TextView)findViewById(R.id.textViewLocation);
-
+        String docSelect = ((globalClass) this.getApplication()).getDocumentName();
         String userSelect = ((globalClass) this.getApplication()).getUsernameGlobal();
         String sizeSelected = getIntent().getExtras().getString("sizeSelected");
         String typeSelected = getIntent().getExtras().getString("typeSelected");
         String gsmSelected = getIntent().getExtras().getString("gsmSelected");
         String locationText = getIntent().getExtras().getString("locationText");
+        txtDoc.setText(docSelect);
         txtUser.setText(userSelect);
         txtSize.setText(sizeSelected);
         txtType.setText(typeSelected);

@@ -33,14 +33,16 @@ public class historyActivity extends Fragment{
         ArrayList<String> hisDate = ((globalClass) getActivity().getApplication()).getHistoryDate();
 
         if(typeSelected != null) {
-            ((globalClass)  getActivity().getApplication()).addHistoryDocumentName(typeSelected);
+            ((globalClass)  getActivity().getApplication()).addHistoryDocumentName(((globalClass) getActivity().getApplication()).getDocumentName());
             ((globalClass)  getActivity().getApplication()).addHistoryDate(currentDateTimeString);
         }
         adapter = new historyAdapter(getActivity(),hisDocName,hisDate);
         l1.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();
+        ((globalClass)  getActivity().getApplication()).setDocumentName(null);
         return view;
+
     }
 }
 

@@ -3,6 +3,7 @@ package com.insertco.insert;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -56,8 +57,13 @@ public class homeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(homeActivity.this, addActivity.class);
-                startActivity(intent);
+                if(((globalClass) getApplication()).getDocumentName()!=null) {
+                    Intent intent = new Intent(homeActivity.this, addActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Snackbar.make(view, "Please Upload and Select your Document", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                }
             }
         });
 

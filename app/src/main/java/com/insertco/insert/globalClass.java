@@ -9,12 +9,18 @@ public class globalClass extends Application{
     private ArrayList<String> historyDocumentName = new ArrayList<String>();
     private ArrayList<String> historyDate = new ArrayList<String>();
     private ArrayList<String> storageName = new ArrayList<String>();
-
+    private String documentName;
     public String getUsernameGlobal(){
         return username;
     }
     public void setUsernameGlobal(String x){
         this.username = x;
+    }
+    public String getDocumentName(){
+        return documentName;
+    }
+    public void setDocumentName(String x){
+        this.documentName = x;
     }
     public ArrayList<String> getHistoryDocumentName(){
         return historyDocumentName;
