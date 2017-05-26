@@ -1,22 +1,12 @@
 package com.insertco.insert;
 
-import android.content.Intent;
-import android.content.IntentSender;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.view.View;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.View;
 import android.widget.Toast;
-
-import java.io.File;
-
-import static android.content.ContentValues.TAG;
 
 public class PopUp extends Activity {
 
@@ -60,12 +50,35 @@ public class PopUp extends Activity {
         }
     }
 
-    public void uploadVideo (View view){
+    public void uploadVideo (View view) {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("video/*");
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, REQUEST_IMAGE_GET);
+
         }
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode,
+                                 Intent resultData) {
 
+        // The ACTION_OPEN_DOCUMENT intent was sent with the request code
+        // READ_REQUEST_CODE. If the request code seen here doesn't match, it's the
+        // response to some other intent, and the code below shouldn't run at all.
+
+        if (requestCode == REQUEST_IMAGE_GET && resultCode == Activity.RESULT_OK) {
+            // The document selected by the user won't be returned in the intent.
+            // Instead, a URI to that document will be contained in the return intent
+            // provided to this method as a parameter.
+            // Pull that URI using resultData.getData().
+            Uri uri = null;
+            if (resultData != null) {
+                uri = resultData.getData();
+            }
+            String stringUri;
+            stringUri = uri.toString();
+            Toast.makeText(this,stringUri,Toast.LENGTH_SHORT).show();
+
+        }
+    }
 }
