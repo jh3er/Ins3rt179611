@@ -16,25 +16,30 @@ import java.util.Date;
 
 
 public class historyActivity extends Fragment{
-
-    ArrayList<String> historyDocumentName = new ArrayList<String>();
-    ArrayList<String> historyDate = new ArrayList<String>();
+//
+//    ArrayList<String> historyDocumentName = new ArrayList<String>();
+//    ArrayList<String> historyDate = new ArrayList<String>();
+    historyAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_history, container, false);
-        historyDocumentName.add("doc1.docx");
-        historyDate.add("25 May 2017");
+        ListView l1=(ListView)view.findViewById(R.id.listViewHistory);
         String typeSelected = getActivity().getIntent().getStringExtra("typeSelected");
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+
+
+        ArrayList<String> hisDocName = ((globalClass) getActivity().getApplication()).getHistoryDocumentName();
+        ArrayList<String> hisDate = ((globalClass) getActivity().getApplication()).getHistoryDate();
+
         if(typeSelected != null) {
-            historyDocumentName.add(typeSelected);
-            historyDate.add(currentDateTimeString);
+            ((globalClass)  getActivity().getApplication()).addHistoryDocumentName(typeSelected);
+            ((globalClass)  getActivity().getApplication()).addHistoryDate(currentDateTimeString);
         }
+        adapter = new historyAdapter(getActivity(),hisDocName,hisDate);
+        l1.setAdapter(adapter);
 
-        ListView l1=(ListView)view.findViewById(R.id.listViewHistory);
-        l1.setAdapter(new historyAdapter(getActivity(),historyDocumentName,historyDate));
-
+        adapter.notifyDataSetChanged();
         return view;
     }
 }
