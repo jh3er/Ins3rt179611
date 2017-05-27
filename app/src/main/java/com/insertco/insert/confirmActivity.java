@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -23,24 +24,79 @@ public class confirmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm);
+        TextView txtId = (TextView)findViewById(R.id.textViewOrderDetail);
         TextView txtDoc = (TextView)findViewById(R.id.textViewDocument);
         TextView txtUser = (TextView)findViewById(R.id.textViewUser);
         TextView txtSize = (TextView)findViewById(R.id.textViewSize);
         TextView txtType = (TextView)findViewById(R.id.textViewType);
         TextView txtGsm = (TextView)findViewById(R.id.textViewGSM);
         TextView txtLocation = (TextView)findViewById(R.id.textViewLocation);
+        TextView txtTotal = (TextView)findViewById(R.id.textViewTotal);
+        ArrayList<String> ARorderId = ((globalClass) this.getApplication()).getHistoryDocumentName();
+        String orderId = "A000"+String.valueOf(ARorderId.size()+1);
         String docSelect = ((globalClass) this.getApplication()).getDocumentName();
         String userSelect = ((globalClass) this.getApplication()).getUsernameGlobal();
         String sizeSelected = getIntent().getExtras().getString("sizeSelected");
         String typeSelected = getIntent().getExtras().getString("typeSelected");
         String gsmSelected = getIntent().getExtras().getString("gsmSelected");
         String locationText = getIntent().getExtras().getString("locationText");
+        int total=0;
+        txtId.setText(orderId);
         txtDoc.setText(docSelect);
         txtUser.setText(userSelect);
         txtSize.setText(sizeSelected);
         txtType.setText(typeSelected);
         txtGsm.setText(gsmSelected);
         txtLocation.setText(locationText);
+
+        switch (sizeSelected){
+            case "A2":
+                total+=5000;
+                break;
+            case "A3":
+                total+=4000;
+                break;
+            case "A4":
+                total+=2000;
+                break;
+            case "A5":
+                total+=1000;
+                break;
+            case "B5":
+                total+=1000;
+                break;
+            case "B4":
+                total+=1000;
+                break;
+            case "Folio":
+                total+=2000;
+                break;
+            case "Letter":
+                total+=2000;
+                break;
+        }
+        switch (typeSelected){
+            case "HVS":
+                total+=5000;
+                break;
+            case "Art Paper":
+                total+=1000;
+                break;
+            case "Glossy Paper":
+                total+=2000;
+                break;
+            case "Concorde":
+                total+=2500;
+                break;
+            case "Linen":
+                total+=4000;
+                break;
+            case "Jasmine":
+                total+=4000;
+                break;
+        }
+        txtTotal.setText("Rp "+String.valueOf(total));
+
     }
 
     Random rand = new Random();

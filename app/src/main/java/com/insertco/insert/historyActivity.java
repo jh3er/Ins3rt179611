@@ -1,6 +1,7 @@
 package com.insertco.insert;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -38,7 +39,9 @@ public class historyActivity extends Fragment{
         }
         adapter = new historyAdapter(getActivity(),hisDocName,hisDate);
         l1.setAdapter(adapter);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            l1.setNestedScrollingEnabled(true);
+        }
         adapter.notifyDataSetChanged();
         ((globalClass)  getActivity().getApplication()).setDocumentName(null);
         return view;
